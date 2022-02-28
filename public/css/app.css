@@ -11312,9 +11312,9 @@ body {
   border-radius: 0;
   position: relative;
   width: 100%;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .login-card .card-body {
   padding: 85px 60px 60px;
@@ -11339,7 +11339,6 @@ body {
   margin-bottom: 20px;
   min-height: 45px;
   font-size: 13px;
-  line-height: 0;
   font-weight: normal;
 }
 .login-card .form-control::-moz-placeholder {
