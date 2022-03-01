@@ -48,7 +48,7 @@
                             </div>
                             <input name="register" id="register" class="btn btn-block login-btn mb-4" type="submit" value="Register">
                         </form>
-                        <a href="#1" class="forgot-password-link">Forgot password?</a>
+                        <a href="{{ url('forgot-password') }}" class="text-reset">Forgot Password?</a>
                         <p class="login-card-footer-text">Alredy have an account? <a href="{{ route('login') }}" class="text-reset">Login here</a></p>
                         <nav class="login-card-footer-nav">
                             <a href="#!">Terms of use.</a>
