@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 
+use function Ramsey\Uuid\v1;
+
 class FortifyServiceProvider extends ServiceProvider
 {
     /**
@@ -52,6 +54,10 @@ class FortifyServiceProvider extends ServiceProvider
             return view( 'auth.reset-password', ['request' => $request]);
         });
 
+
+        Fortify::verifyEmailView(function(){
+            return view(view: 'auth.verify-email');
+        });
 
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
