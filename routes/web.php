@@ -2,6 +2,8 @@
 
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/employee',EmployeeController::class);
+
+Route::get('/employee/search','EmployeeController@search');
 
 
 Route::get('/home', function () {
