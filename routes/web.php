@@ -30,7 +30,6 @@ Route::get('/employee/search','EmployeeController@search');
 })->middleware(['auth', 'verified']); */
 
 Route::get('/home', function () {
-    
     return view('welcome');
     //dd(\Illuminate\Support\Facades\Auth::user());
 })->middleware(['auth', 'verified']);
