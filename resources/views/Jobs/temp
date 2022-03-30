@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submission Failure</title>
+        <!-- CSS -->
+        <style>
+        body{
+            text-align: left;
+            color:;
+            font-size: x-large;
+            font-family: 'sans-serif';
+        }
+    </style>
+</head>
+<body>
+    <form action="currentjob_actions.php" method="post">
+       <br>
+        <button type="submit" name="back">Back</button><br>
+    </form>
+</body>
+</html>
+
+<?php
+#information needed to connect to the local db
+$server = "localhost";
+$username = "root";
+$password = "";
+$dbname = "493db";
+
+$conn = mysqli_connect($server , $username , $password , $dbname);
+if(isset($_POST['activate'])){
+}
+if(isset($_POST['delete'])){
+}
+if(isset($_POST['back'])){
+    header("Location: http://localhost/charley5/resources/views/workReq/");
+}
+?>
+ <form action="/navigate"  method="post">
+    {{ csrf_field() }}
+</form>
+
+ <!-- <tr id="Eid{{ $data->Employee_ID }}"> <td><input type="checkbox" class="checkboxC" value="{{ $data -> $row }}"></td> -->
+
+ <form action='edit' method="POST">
+</form>
+ 
+<td><input name="jobId" value={{ $row->Submission_Id }}></td>
+<button type="submit" name="activate">Activate Selected</button>&nbsp;&nbsp;&nbsp;
+<button type="submit" name="delete">Delete Selected</button>&nbsp;&nbsp;&nbsp;
