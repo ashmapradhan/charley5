@@ -8,9 +8,9 @@
    
  
         <div class="card-body">
-        <h5 class="card-title">First Name : {{ $employees->firstname }}</h5>
-        <p class="card-text">Last Name : {{ $employees->lastname }}</p>
-        <p class="card-text">Phone : {{ $employees->phone }}</p>
+        <h5 class="card-title">First Name : {{ $employees?->firstname }}</h5>
+        <p class="card-text">Last Name : {{ $employees?->lastname }}</p>
+        <p class="card-text">Phone : {{ $employees?->phone }}</p>
   </div>
        
     </hr>
