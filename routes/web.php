@@ -30,7 +30,9 @@ Route::get('/employee/search','EmployeeController@search');
 })->middleware(['auth', 'verified']); */
 
 Route::get('/home', function () {
-    dd(\Illuminate\Support\Facades\Auth::user());
+    
+    return view('welcome');
+    //dd(\Illuminate\Support\Facades\Auth::user());
 })->middleware(['auth', 'verified']);
 
 //these 2 sections worked but how? how does it know to go to which one first? 
