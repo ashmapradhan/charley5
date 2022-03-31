@@ -10,7 +10,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
-class Controller extends BaseController
+class GetController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function emplData(){
+        $data = DB::table('empl_info')->get();
+        return view('Jobs.index', ['data'=>$data]);
+    }
+    public function curWrk(){
+        $data = DB::table('newjobform')->get();
+        return view('Jobs.currentjob_actions', ['data'=>$data]);
+    }
 }
