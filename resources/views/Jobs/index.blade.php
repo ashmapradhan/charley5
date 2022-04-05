@@ -61,9 +61,9 @@
                 <select name="Employee">
                 <option></option>
                     @foreach ($data as $row)
-                    <option value="{{ $row->Employee_Name }}">{{ $row->Employee_Name }}</option>                        
+                    <option value="{{ $row->firstname }} {{ $row->lastname }}">{{ $row->firstname }} {{ $row->lastname }}</option>                        
                     @endforeach
-            </select><br>
+                </select><br>
                 Job Description:<br><textarea type="text" name="Description"></textarea><br>
                 Required Materials:<br><textarea type="text" name="Materials"></textarea><br>
                 Start Date:<input type="date" name="Start_Date">&nbsp;&nbsp;&nbsp;

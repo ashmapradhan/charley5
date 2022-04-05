@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('workSubnew', function (Blueprint $table) {
-            $table->integer('Submission_id');
+        Schema::create('newjobform', function (Blueprint $table) {
+            $table->id('Submission_Id');
             $table->string('Job_Name');
             $table->string('Employee');
             $table->text('Description');
             $table->text('Materials');
             $table->datetime('Start_Date');
             $table->datetime('End_Date');
+            $table->string('Status');
+
         });
     }
 
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workSubnew');
+        Schema::dropIfExists('newjobform');
     }
 };

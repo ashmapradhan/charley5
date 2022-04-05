@@ -9,15 +9,19 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Models\Cm_employee;
+use App\Models\Work_request;
 
 class GetController extends Controller
 {
     public function emplData(){
-        $data = DB::table('empl_info')->get();
+        //$data = DB::table('cm_emp')->get();
+        $data = Cm_employee::get();
         return view('Jobs.index', ['data'=>$data]);
     }
     public function curWrk(){
-        $data = DB::table('newjobform')->get();
+        //$data = DB::table('newjobform')->get();
+        $data = Work_request::get();
         return view('Jobs.currentjob_actions', ['data'=>$data]);
     }
 }
