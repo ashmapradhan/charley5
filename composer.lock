@@ -1131,6 +1131,7 @@
         },
         {
             "name": "laravel/fortify",
+
             "version": "v1.11.2",
             "source": {
                 "type": "git",
@@ -1141,6 +1142,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/fortify/zipball/35c44f36f2a93fb7d3d8b38d6b7794913c69d414",
                 "reference": "35c44f36f2a93fb7d3d8b38d6b7794913c69d414",
+
                 "shasum": ""
             },
             "require": {
@@ -1190,6 +1192,7 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
+
             "time": "2022-03-04T20:27:28+00:00"
         },
         {
@@ -1204,6 +1207,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/35be2599c9ac3d58bf1578895c2e85ea4848a0d7",
                 "reference": "35be2599c9ac3d58bf1578895c2e85ea4848a0d7",
+
                 "shasum": ""
             },
             "require": {
@@ -1369,7 +1373,9 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+
             "time": "2022-03-15T14:41:19+00:00"
+
         },
         {
             "name": "laravel/sanctum",
@@ -1750,6 +1756,7 @@
         },
         {
             "name": "league/flysystem",
+
             "version": "3.0.12",
             "source": {
                 "type": "git",
@@ -1760,6 +1767,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/4744d96fb2456d9808be3ad596a2520b902996e2",
                 "reference": "4744d96fb2456d9808be3ad596a2520b902996e2",
+
                 "shasum": ""
             },
             "require": {
@@ -1821,6 +1829,7 @@
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
                 "source": "https://github.com/thephpleague/flysystem/tree/3.0.12"
+
             },
             "funding": [
                 {
@@ -1837,6 +1846,7 @@
                 }
             ],
             "time": "2022-03-12T19:32:12+00:00"
+
         },
         {
             "name": "league/mime-type-detection",
@@ -5148,6 +5158,7 @@
         },
         {
             "name": "symfony/var-dumper",
+
             "version": "v6.0.6",
             "source": {
                 "type": "git",
@@ -5233,6 +5244,7 @@
                 }
             ],
             "time": "2022-03-02T12:58:14+00:00"
+
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -6492,6 +6504,7 @@
         },
         {
             "name": "phpunit/php-code-coverage",
+
             "version": "9.2.15",
             "source": {
                 "type": "git",
@@ -6558,6 +6571,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.15"
+
             },
             "funding": [
                 {
@@ -6566,6 +6580,7 @@
                 }
             ],
             "time": "2022-03-07T09:28:20+00:00"
+
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -6820,6 +6835,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/35ea4b7f3acabb26f4bb640f8c30866c401da807",
                 "reference": "35ea4b7f3acabb26f4bb640f8c30866c401da807",
+
                 "shasum": ""
             },
             "require": {
@@ -6898,6 +6914,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.19"
+
             },
             "funding": [
                 {
@@ -6910,6 +6927,7 @@
                 }
             ],
             "time": "2022-03-15T09:57:31+00:00"
+
         },
         {
             "name": "sebastian/cli-parser",
