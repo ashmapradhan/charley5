@@ -15,12 +15,10 @@ use App\Models\Work_request;
 class GetController extends Controller
 {
     public function emplData(){
-        //$data = DB::table('cm_emp')->get();
         $data = Cm_employee::get();
         return view('Jobs.index', ['data'=>$data]);
     }
     public function curWrk(){
-        //$data = DB::table('newjobform')->get();
         $data = Work_request::get();
         return view('Jobs.currentjob_actions', ['data'=>$data]);
     }

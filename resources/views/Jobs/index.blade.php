@@ -76,8 +76,7 @@
            </div><br>
            <div id="botbut">
             <button type="submit" value="curWrk" formaction="{{url('/currentJobs') }}">View Requests</button>&nbsp;&nbsp;&nbsp;
-            <button type="submit" formaction="{{ url('/dashboard') }}">Home</button>&nbsp;&nbsp;&nbsp;
-
+            <button type="submit" formaction="{{ url('/homev2') }}">Home</button>&nbsp;&nbsp;&nbsp;
         </div>
         </form>
     </body>

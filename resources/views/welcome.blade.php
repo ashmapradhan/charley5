@@ -43,7 +43,7 @@
                             <i class="icon-share"></i><span> Employees Info </span></a>
                         </li>
                         <li>
-                            <a href="placeholder">
+                            <a href="/workRequest">
                             <i class="mdi mdi-briefcase-check"></i><span> Add a new job </span></a>
                         </li>
                     </ul>

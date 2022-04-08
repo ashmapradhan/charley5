@@ -34,7 +34,7 @@ class PostsController extends Controller
             return view('Jobs.incorrectdates');
         }
         
-        $data=array('Job_Name'=>$Job_Name,"Employee"=>$Employee,"Description"=>$Description,"Materials"=>$Materials, "Start_Date"=>$Start_Date, "End_Date"=>$End_Date, "Status"=>"$Status");
+        $data=array('Job_Name'=>$Job_Name,'Employee'=>$Employee,'Description'=>$Description,'Materials'=>$Materials, 'Start_Date'=>$Start_Date, 'End_Date'=>$End_Date, 'Status'=>'Requested');
         Work_request::insert($data);
         //DB::table('newjobform')->insert($data);
         return view('Jobs.submissioncomplete');
@@ -44,12 +44,35 @@ class PostsController extends Controller
         }
     }
     public function edit(){
-            
+
             if(isset($_POST['activate'])){
                 $Id = ($_POST['activate']);
-                $val= array('Status'=>'Active');
-                //DB::table('newjobform')->where('Submission_Id', $Id)->update($val);
-                Work_request::where('Submission_Id', $Id)->update($val);
+                $var = 'Active';
+                //DB::table('newjobform')->where('Submission_Id', $Id)->update(['Status'=>'Active']);
+                Work_request::where('Submission_Id', $Id)->update(array('Status'=>'Active'));
+
+                    //Recipient of email
+                    $to = 'cjmatlo@gmail.com'; //enter database emails are being pulled from
+
+                    //Subject of email
+                    $subject = 'You have been assigned a new job!
+                    <br>Job name:
+                    <br>Job date:
+                    <br>Job link:';
+
+                    //Body of email
+                    $message = '<h1> You have been assigned a new job!</h1><p>Job name: <br>Job date: <br>Job link:</p>';
+
+                    //Headers
+                    $headers = "From: Hague Electric <shaque1368@gmail.com>\r\n";
+                    $headers .= "Content-type: text/html\r\n";
+
+                    //Sending email
+                    if(mail($to, $subject, $message, $headers))
+                        echo "Email sent";
+                    else
+                        echo "Email failed to send";
+
                 return view('Jobs.activatecomp');
             }
             
