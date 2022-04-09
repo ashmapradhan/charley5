@@ -16,9 +16,11 @@ class Subscribe extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $email;
+    
+    public function __construct($email)
     {
-        //
+        $this->email = $email;
     }
 
     /**
@@ -28,6 +30,8 @@ class Subscribe extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.subscribers');
+        return $this
+        ->subject('Thank you for subscribing to our newsletter')
+        ->markdown('emails.subscribers');
     }
 }

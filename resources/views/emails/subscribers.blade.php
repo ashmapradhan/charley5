@@ -1,7 +1,10 @@
 @component('mail::message')
 # Introduction
 
-The body of your message.
+Dear{{ $email }},
+
+We look forward to communicating more with you. For more information visit our blog.
+
 
 @component('mail::button', ['url' => ''])
 Button Text

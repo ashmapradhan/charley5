@@ -2,12 +2,10 @@
 
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\GetController;
-
 use App\Http\Controllers\EmployeeController;
-
+use App\Http\Controllers\SubscriberController;
 
 
 /*
@@ -33,6 +31,8 @@ Route::post('create', 'PostsController@insert');
 Route::post('edit', 'PostsController@edit');
 
 Route::post('/dashboard', 'PostsController@home');
+
+Route::post('/subscribe', [SubscriberController::class, 'subscribe']);
 
 Route::get('/', function () {
     return view('auth/login');
