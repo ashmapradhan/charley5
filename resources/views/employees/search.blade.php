@@ -8,14 +8,7 @@
                     <div class="card-header">
                         <h2>Employees</h2>
                     </div>
-                    <div class="form-search" style="display:flex">
-                        <form action="{{ url('/employee/search') }}" method="get" accept-charset="utf-8">
-                            <input type="text"  style="margin-left:auto" name="search_name" class="form control" placeholder="Search Name" >
-                            <button type = "submit" class="btn btn-primary">Search</button>
-                        </form>
-                        
-                        
-                    </div>
+                    
 
                     <div class="card-body">
                         <a href="{{ url('/employee/create') }}" class="btn btn-success btn-sm" title="Add New Employee">

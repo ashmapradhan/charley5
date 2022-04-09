@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="placeholder">
+                            <a href="/employee">
                             <i class="icon-share"></i><span> Employees Info </span></a>
                         </li>
                         <li>

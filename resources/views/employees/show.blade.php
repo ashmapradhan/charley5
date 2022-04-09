@@ -11,6 +11,7 @@
         <h5 class="card-title">First Name : {{ $employees?->firstname }}</h5>
         <p class="card-text">Last Name : {{ $employees?->lastname }}</p>
         <p class="card-text">Phone : {{ $employees?->phone }}</p>
+        <p class="card-text">Email : {{ $employees?->email }}</p>
   </div>
        
     </hr>

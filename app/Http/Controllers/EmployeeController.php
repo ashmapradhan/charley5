@@ -56,7 +56,8 @@ class EmployeeController extends Controller
     public function search(Request $request)
     {
         $get_name = $request->search_name;
-        $employees = Employee::where('firstname','lastname', 'LIKE', '%'.$get_name.'%')->get();
-        return view('search',compact('employees'));
+        $employees = Employee::where('firstname','lastname', 'LIKE', '%'.$get_name.'%')?->get();
+        return view('search',compact('employee'));
+
     }
 }
