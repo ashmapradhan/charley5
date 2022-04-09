@@ -55,6 +55,6 @@ Route::get('/home', function () {
 
 //these 2 sections worked but how? how does it know to go to which one first? 
 
-Route::get('/homev2', function () {
+Route::get('/homev2', 'GetController@welcomeGet', function () {
     return view('welcome');
 });
