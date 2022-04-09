@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 use App\Models\Employee;
 
 class EmployeeController extends Controller
@@ -55,7 +56,8 @@ class EmployeeController extends Controller
     public function search(Request $request)
     {
         $get_name = $request->search_name;
-        $employees = Employee::where('firstname','lastname', 'LIKE', '%'.$get_name.'$')->get();
+        $employees = Employee::where('firstname','lastname', 'LIKE', '%'.$get_name.'%')?->get();
         return view('search',compact('employee'));
+
     }
 }
