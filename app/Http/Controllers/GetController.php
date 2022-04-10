@@ -22,4 +22,10 @@ class GetController extends Controller
         $data = Work_request::get();
         return view('Jobs.currentjob_actions', ['data'=>$data]);
     }
+
+    public function welcomeGet(){
+        $status = 'Active';
+        $data = Work_request::get()->where('Status', $status);
+        return view('welcome', ['data'=>$data]);
+    }
 }
