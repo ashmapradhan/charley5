@@ -100,22 +100,3 @@
     </div>
 </body>
 </html>
-<!--
-<div class="col-xl-8">
-    <div class="card">
-        <div class="card-heading p-4">
-            <div class="mini-stat-icon float-right">
-                <i class="mdi mdi-briefcase-check bg-success text-white"></i>
-            </div>
-            <div>
-                <h5 class="font-16">Job Example 2</h5>
-            </div>
-            <h3 class="mt-4">Job XZY</h3>
-            <div class="progress mt-4" style="height: 4px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <p class="text-muted mt-2 mb-0">Completion<span class="float-right">30%</span></p>
-        </div>
-    </div>
-</div>
--->
