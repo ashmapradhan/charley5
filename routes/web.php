@@ -2,12 +2,10 @@
 
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\GetController;
-
 use App\Http\Controllers\EmployeeController;
-
+use App\Http\Controllers\SubscriberController;
 
 
 /*
@@ -34,6 +32,8 @@ Route::post('edit', 'PostsController@edit');
 
 Route::post('/dashboard', 'PostsController@home');
 
+Route::post('/subscribe', [SubscriberController::class, 'subscribe']);
+
 Route::get('/', function () {
     return view('auth/login');
 });
@@ -55,6 +55,6 @@ Route::get('/home', function () {
 
 //these 2 sections worked but how? how does it know to go to which one first? 
 
-Route::get('/homev2', function () {
+Route::get('/homev2', 'GetController@welcomeGet', function () {
     return view('welcome');
 });

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('Employee');
             $table->text('Description');
             $table->text('Materials');
-            $table->datetime('Start_Date');
-            $table->datetime('End_Date');
+            $table->date('Start_Date');
+            $table->date('End_Date');
             $table->string('Status');
 
         });

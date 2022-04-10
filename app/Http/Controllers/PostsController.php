@@ -34,7 +34,7 @@ class PostsController extends Controller
             return view('Jobs.incorrectdates');
         }
         
-        $data=array('Job_Name'=>$Job_Name,"Employee"=>$Employee,"Description"=>$Description,"Materials"=>$Materials, "Start_Date"=>$Start_Date, "End_Date"=>$End_Date, "Status"=>"$Status");
+        $data=array('Job_Name'=>$Job_Name,'Employee'=>$Employee,'Description'=>$Description,'Materials'=>$Materials, 'Start_Date'=>$Start_Date, 'End_Date'=>$End_Date, 'Status'=>'Requested');
         Work_request::insert($data);
         //DB::table('newjobform')->insert($data);
         return view('Jobs.submissioncomplete');
@@ -44,12 +44,12 @@ class PostsController extends Controller
         }
     }
     public function edit(){
-            
+
             if(isset($_POST['activate'])){
                 $Id = ($_POST['activate']);
-                $val= array('Status'=>'Active');
-                //DB::table('newjobform')->where('Submission_Id', $Id)->update($val);
-                Work_request::where('Submission_Id', $Id)->update($val);
+                $var = 'Active';
+                //DB::table('newjobform')->where('Submission_Id', $Id)->update(['Status'=>'Active']);
+                Work_request::where('Submission_Id', $Id)->update(array('Status'=>'Active'));
                 return view('Jobs.activatecomp');
             }
             
