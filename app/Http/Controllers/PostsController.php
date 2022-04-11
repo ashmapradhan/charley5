@@ -48,13 +48,15 @@ class PostsController extends Controller
                 $Id = ($_POST['activate']);
                 Work_request::where('Submission_Id', $Id)->update(array('Status'=>'Active'));
                
+                //Recipient of email
                 $work = Work_request::where('Submission_Id', $Id)->pluck('Employee');
                 $empl_email = Employee::where('name', $work)->pluck('email');
                 
                 $email = str_replace( array('["','"]'),'',$empl_email );
-                //Recipient of email
                 
-                $to = $email; //enter database emails are being pulled from
+                
+                $to = $email; //enter table email is being pulled from
+
                 //Subject of email
                 $subject = 'You have been assigned a new job!';
 
