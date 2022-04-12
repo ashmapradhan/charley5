@@ -10,7 +10,7 @@
         box-sizing: border-box;
     }
     body{
-        background: #030e42c2;
+        background: #1f262a;
     }
     h1{
         color: white;
@@ -31,7 +31,7 @@
     }
     #inputArea{
         margin: auto;
-        border: 3px solid #bebec0c2;
+        border: 3px solid #03c03c;
         padding: 30px;
         color: white;
         width: 90%;
@@ -73,11 +73,13 @@
                     <button type="submit" name="submit">Submit Request</button>&nbsp;&nbsp;&nbsp;
                     <button type="submit" value="curWrk" formaction="{{url('/workRequest') }}">Clear Form</button>
                 </div>
-           </div><br>
-           <div id="botbut">
-            <button type="submit" value="curWrk" formaction="{{url('/currentJobs') }}">View Requests</button>&nbsp;&nbsp;&nbsp;
-            <button type="submit" formaction="{{ url('/homev2') }}">Home</button>&nbsp;&nbsp;&nbsp;
-        </div>
+            </div><br>
         </form>
+        <div id="botbut">
+            <form method="GET">
+                <button type="submit" value="curWrk" formaction="{{url('/currentJobs') }}">View Requests</button>&nbsp;&nbsp;&nbsp;
+                <button type="submit" formaction="{{ url('/homev2') }}">Home</button>&nbsp;&nbsp;&nbsp;
+            </form> 
+        </div>
     </body>
 </html>
