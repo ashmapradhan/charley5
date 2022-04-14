@@ -9,15 +9,6 @@
                         <h2>Employees</h2>
                     </div>
                     
-                        <form action="{{url('/employee/search')}}" method="get" accept-charset="utf-8">
-                            <div class="form-search" style="display:flex">
-                                <input type="text"  style="margin-left:auto" name="search_name" class="form control" placeholder="Search Name" >
-                                <button type = "submit" class="btn btn-primary">Search</button>
-                            </div>
-                        </form>
-                        
-                        
-                    </div>
 
                     <div class="card-body">
                         <a href="{{ url('/employee/create') }}" class="btn btn-success btn-sm" title="Add New Employee">
@@ -33,6 +24,7 @@
                                         <th>First Name</th>
                                         <th>Last Name</th>
                                         <th>Phone</th>
+                                        <th>Email</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -43,6 +35,8 @@
                                         <td>{{ $item->firstname }}</td>
                                         <td>{{ $item->lastname }}</td>
                                         <td>{{ $item->phone }}</td>
+                                        <td>{{ $item->email }}</td>
+
  
                                         <td>
                                             <a href="{{ url('/employee/' . $item->id) }}" title="View Employee"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>

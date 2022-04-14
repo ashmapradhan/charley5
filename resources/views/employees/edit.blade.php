@@ -15,6 +15,8 @@
         <input type="text" name="lastname" id="lastname" value="{{$employees->lastname}}" class="form-control"></br>
         <label>Mobile</label></br>
         <input type="text" name="phone" id="phone" value="{{$employees->phone}}" class="form-control"></br>
+        <label>Email</label></br>
+        <input type="text" name="email" id="email" value="{{$employees->email}}" class="form-control"></br>
         <input type="submit" value="Update" class="btn btn-success"></br>
     </form>
    
