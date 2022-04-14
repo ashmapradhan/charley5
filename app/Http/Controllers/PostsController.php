@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Query\Builder;
-use App\Models\Cm_employee;
+use App\Models\Employee;
 use App\Models\Work_request;
 
 class PostsController extends Controller
@@ -36,7 +36,6 @@ class PostsController extends Controller
         
         $data=array('Job_Name'=>$Job_Name,'Employee'=>$Employee,'Description'=>$Description,'Materials'=>$Materials, 'Start_Date'=>$Start_Date, 'End_Date'=>$End_Date, 'Status'=>'Requested');
         Work_request::insert($data);
-        //DB::table('newjobform')->insert($data);
         return view('Jobs.submissioncomplete');
         }
         else{
@@ -47,19 +46,49 @@ class PostsController extends Controller
 
             if(isset($_POST['activate'])){
                 $Id = ($_POST['activate']);
-                $var = 'Active';
-                //DB::table('newjobform')->where('Submission_Id', $Id)->update(['Status'=>'Active']);
                 Work_request::where('Submission_Id', $Id)->update(array('Status'=>'Active'));
+               
+                //Recipient of email
+                $work = Work_request::where('Submission_Id', $Id)->pluck('Employee');
+                $empl_email = Employee::where('name', $work)->pluck('email');
+                
+                $email = str_replace( array('["','"]'),'',$empl_email );
+                
+                
+                $to = $email; //enter table email is being pulled from
+
+                //Subject of email
+                $subject = 'You have been assigned a new job!';
+
+                    //Body of email
+                    $title = '<h3> You have been assigned a new job!</h3><br>';
+                    $Job_name = Work_request::where('Submission_Id', $Id)->pluck('Job_Name');
+                    $Job_Sdate = Work_request::where('Submission_Id', $Id)->pluck('Start_Date');
+                    $Job_Edate = Work_request::where('Submission_Id', $Id)->pluck('End_Date');
+                    $Job_Desc = Work_request::where('Submission_Id', $Id)->pluck('Description');
+                    $Job_Mat = Work_request::where('Submission_Id', $Id)->pluck('Materials');   
+                    
+                
+                $message = '<p>'.$title.'<br>Job name: '.$Job_name.'<br>Job Start date: '.$Job_Sdate.'<br>Job End date: '.$Job_Edate.'<br>Job Description: '.$Job_Desc.'<br>Job Materials: '.$Job_Mat.'</p>';
+                
+                //Headers
+                $headers = "From: Hague Electric <shaque1368@gmail.com>\r\n";
+                $headers .= "Content-type: text/html\r\n";
+
+                //Sending email
+                if(mail($to, $subject, $message, $headers))
+                    echo "Email sent";
+                else
+                    echo "Email failed to send";
+
                 return view('Jobs.activatecomp');
             }
             
             elseif(isset($_POST['delete'])){
                 $Id = ($_POST['delete']);
-                //DB::table('newjobform')->where('Submission_Id', $Id)->delete();
                 Work_request::where('Submission_Id', $Id)->delete();
                 return view('Jobs.selectioncomplete');
             }
-        //}
         else{
             return view('Jobs.selectionerror');
         }

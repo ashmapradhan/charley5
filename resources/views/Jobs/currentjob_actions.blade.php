@@ -10,7 +10,7 @@
         box-sizing: border-box;
     }
     body{
-        background: #030e42c2;
+        background: #1f262a;
     }
     h1{
         color: white;
@@ -19,7 +19,7 @@
     }
     table{
         margin: 20px auto;
-        border: 3px solid #bebec0c2;
+        border: 3px solid #03c03c;
         padding: 10px;
         color: white;
         width: 90%;
@@ -66,9 +66,11 @@
                 <td>{{ $row->Status }}</td>             
                 @endforeach
                 </tr>
-            </table>
-                <button type="submit" name="workRequest" formaction="{{ url('/workRequest') }}">New Request</button>&nbsp;&nbsp;&nbsp;
-                <button type="submit" formaction="{{ url('/dashboard') }}">Home</button>&nbsp;&nbsp;&nbsp;        
+            </table>       
             </form>
+            <form method="GET">
+                <button type="submit" name="workRequest" formaction="{{ url('/workRequest') }}">New Request</button>&nbsp;&nbsp;&nbsp;
+                <button type="submit" formaction="{{ url('/homev2') }}">Home</button>&nbsp;&nbsp;&nbsp;
+            </form> 
     </body>
 </html>

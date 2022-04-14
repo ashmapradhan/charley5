@@ -9,5 +9,5 @@ class Cm_employee extends Model
 {
     protected $table = 'cm_emp';
     protected $primaryKey = 'id';
-    protected $fillable = ['firstname','lastname','phone','email'];
+    protected $fillable = ['name','phone','email'];
 }

@@ -22,7 +22,7 @@ Route::post('/workRequest', 'GetController@emplData');
 
 Route::get('/currentJobs', 'GetController@curWrk');
 
-Route::post('/currentJobs', 'GetController@curWrk');
+//Route::post('/currentJobs', 'GetController@curWrk');
 
 Route::get('insert', 'PostsController@insertform');
 
